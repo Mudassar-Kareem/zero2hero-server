@@ -12,12 +12,12 @@ const transactionRouter = require('./routes/transaction');
 const app = express();
 
 // CORS Middleware - Place it before routes
-const corsOptions = {
-    origin:"https://zero2hero-client.vercel.app",// Allow only this origin
-    optionsSuccessStatus: 200,
-    credentials: true, 
-};
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: "https://zero2hero-client.vercel.app", //"http://localhost:5173",
+    methods: ["GET", "POST", "DELETE", "PUT"],
+    credentials: true
+}));
+
 
 // Parse incoming JSON data
 // app.use(express.json({ limit: '100mb' }));
