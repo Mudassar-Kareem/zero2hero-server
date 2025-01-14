@@ -13,15 +13,15 @@ const app = express();
 
 // CORS Middleware - Place it before routes
 const corsOptions = {
-    origin:["https://zero2hero-client.vercel.app"],// Allow only this origin
+    origin:"https://zero2hero-client.vercel.app",// Allow only this origin
     optionsSuccessStatus: 200,
     credentials: true, 
 };
 app.use(cors(corsOptions));
 
 // Parse incoming JSON data
-app.use(express.json({ limit: '100mb' }));
-app.use(express.urlencoded({ limit: '10mb', extended: true }));
+// app.use(express.json({ limit: '100mb' }));
+// app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 // Cookie parser middleware
 app.use(cookieParser());
