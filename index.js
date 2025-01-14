@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cloudinary = require('cloudinary').v2;
 
 
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DB_URL)
   .then((connection) => {
     console.log(`Server connected with MongoDB: ${connection.connection.name}`);
   })
