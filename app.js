@@ -14,7 +14,7 @@ const app = express();
 // CORS Middleware - Place it before routes
 const corsOptions = {
     // local origin: 'http://localhost:5173'
-    origin:["http://localhost:5173","https://zero2hero-client.vercel.app"],// Allow only this origin
+    origin:"https://zero2hero-client.vercel.app",// Allow only this origin
     optionsSuccessStatus: 200, // For legacy browser support
     credentials: true, // Enable to allow cookies
 };
