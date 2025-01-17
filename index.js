@@ -15,22 +15,22 @@ mongoose.connect(process.env.DB_URL)
 
 // Cloudinary configuration
 cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME , 
-    api_key: process.env.CLOUD_API_KEY , 
-    api_secret: process.env.CLOUD_SECRET ,
-  });
-  
-  // Test Cloudinary configuration
-  cloudinary.api.ping((error, result) => {
-    if (error) {
-      console.error('Cloudinary configuration error:', error);
-    } else {
-      console.log('Cloudinary configuration successful:', result);
-    }
-  });
-  
-  // Create and start the server
-  const server = app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
-  });
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_SECRET,
+});
+
+// Test Cloudinary configuration
+cloudinary.api.ping((error, result) => {
+  if (error) {
+    console.error('Cloudinary configuration error:', error);
+  } else {
+    console.log('Cloudinary configuration successful:', result);
+  }
+});
+
+// Create and start the server
+const server = app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT}`);
+});
 
